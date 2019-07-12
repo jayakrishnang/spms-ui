@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<comment version="3.0">
+  <caption>Set of business vectors</caption>
+  <note>Set of business vectors</note>
+  <place/>
+  <categories>
+    <category value="achievement"/>
+    <category value="aim"/>
+    <category value="business"/>
+    <category value="goal"/>
+    <category value="growth"/>
+    <category value="information"/>
+    <category value="planning"/>
+    <category value="strategy"/>
+    <category value="success"/>
+    <category value="analysis"/>
+    <category value="illustration"/>
+    <category value="vector"/>
+    <category value="icon"/>
+    <category value="graphic"/>
+    <category value="graph"/>
+    <category value="statistics"/>
+    <category value="ideas"/>
+    <category value="corporate"/>
+    <category value="retro"/>
+    <category value="management"/>
+    <category value="communication"/>
+    <category value="communicate"/>
+    <category value="talk"/>
+    <category value="dialogue"/>
+    <category value="time"/>
+    <category value="time management"/>
+    <category value="clock"/>
+    <category value="watch"/>
+    <category value="alarm"/>
+    <category value="arrow"/>
+    <category value="target"/>
+    <category value="mission"/>
+    <category value="cog"/>
+    <category value="rocket"/>
+    <category value="business travel"/>
+    <category value="travel"/>
+    <category value="startup"/>
+    <category value="online banking"/>
+    <category value="online payment"/>
+    <category value="money"/>
+    <category value="banking"/>
+    <category value="currency"/>
+    <category value="security"/>
+    <category value="lock"/>
+    <category value="padlock"/>
+    <category value="protection"/>
+  </categories>
+</comment>
