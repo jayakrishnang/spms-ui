@@ -36,6 +36,15 @@
 <!-- Calendar -->
 <link href="css/jquery-ui-1.8.20.custom.css" rel="stylesheet">
 <script src="js/jquery-ui.multidatespicker.js"></script>
+<script>
+    jQuery(document).ready(function($) {
+        $("#filter_date_in").datepicker({
+            dateFormat: 'MM dd, yy',
+            minDate: 0,
+            showOtherMonths: true
+        });
+    });
+</script>
 <!-- Graph Builder -->
 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
 <script type="text/javascript">
@@ -171,6 +180,7 @@
                                 </li>
                             </ul>
                         </li>
+                        <li class="menu-level-0"><a href="#"><i class="icon-menu icon-menu4"></i><span>calendar</span></a></li>
                         <li class="menu-level-0"><a href="#"><i class="icon-menu icon-menu4"></i><span>settings</span></a></li>
                     </ul>
                 </div>
@@ -179,14 +189,30 @@
                 <!-- row level 2 -->
                 <div class="row">
                     <div class="col-sm-6">
-                        <!-- Widget Weather -->
-                        <div class="widget-container widget-trade boxed">
-                            <div class="widget-title">
-                                <span class="trade-rate trade-rate-up">634. 39</span>
-                                <span class="trade-rate-change">+2.18 (3.71%)</span>
+                        <!-- .service list-->
+                        <div class="service_list service_list_3">
+                            <!-- .row-->
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <!--service item-->
+                                    <div class="service_item boxed green">
+                                        <div class="inner">
+                                            <div class="service_title"><h2><a href="#">112 Hours This Month</a></h2></div>
+                                            <div class="service_desc">
+                                                <div class="post-meta-top">
+                                                    <span class="post-date"><i class="icon-post2 icon-date"></i>SEP 5TH, 2013</span>
+                                                    <span class="post-date"><i class="icon-post2 icon-date"></i>SEP 5TH, 2013</span>
+                                                    <span class="post-author"><i class="icon-post2 icon-author"></i>George S. Patton</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--/service item-->
+                                </div>
                             </div>
+                            <!--/ .row-->
                         </div>
-                        <!--/ Widget Weather -->
+                        <!--/ .service list-->
 
                         <!-- Widget Profile -->
                         <div class="widget-container widget_profile widget_categories boxed">
@@ -229,6 +255,10 @@
                                                 <option value='Doe@ex.com'>Factum</option>
                                             </select>
                                         </div>
+                                        <div class="field_text input_date adv_block">
+                                            <input type="text" name="filter_date_in" class="inputField inputDate" value="Select Date" onfocus="if (this.value == 'Check in') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Check in';}" id="filter_date_in">
+                                            <span class="input_icon"></span>
+                                        </div>
                                         <div class="field_text">
                                             <input type="text" name="subject" id="subject" value="" placeholder="Add Hours" class="inputtext input_middle required" />
                                         </div>
@@ -258,17 +288,17 @@
                                     // <![CDATA[
                                     jQuery(document).ready(function($) {
                                         var daysRange = 5;
-
+                                        var date = new Date();
                                         function assignCalendar(id){
                                             $('<div class="calendar" />')
                                                     .insertAfter( $(id) )
                                                     .multiDatesPicker({
                                                         dateFormat: 'yy-mm-dd',
-                                                        minDate: new Date(),
                                                         maxDate: '+1y',
                                                         altField: id,
                                                         firstDay: 1,
-                                                        showOtherMonths: true
+                                                        showOtherMonths: true,
+                                                        addDates: [date.setDate(14), date.setDate(19)]
                                                     }).prev().hide();
                                         }
 
@@ -286,7 +316,7 @@
 
             <div class="col-sm-4">
                 <!-- Avatar Placeholder -->
-                <div class="widget-container widget_avatar boxed">
+                <div class="widget-container widget_avatar boxed hidden-xs">
                     <div class="avatar-image"><img src="images/temp/avatar-image.jpg" alt="" /></div>
                     <div class="inner clearfix">
                         <div class="avatar"><img src="images/temp/avatar.png" alt="" /></div>
@@ -307,23 +337,31 @@
                             <h6>Data Transfer</h6>
                             <div id="donutchart" class="donutchart"></div>
                             <ul class="stats-data clearfix">
-                                <li><a href="#"><span>audio</span><strong>55%</strong></a></li>
-                                <li class="red"><a href="#"><span>video</span><strong>23%</strong></a></li>
-                                <li class="yellow"><a href="#"><span>photo</span><strong>17%</strong></a></li>
+                                <li><a href="#"><span>OMS</span><strong>55%</strong></a></li>
+                                <li class="red"><a href="#"><span>BizDart</span><strong>23%</strong></a></li>
+                                <li class="yellow"><a href="#"><span>Reditum</span><strong>17%</strong></a></li>
                             </ul>
                         </div>
                         <div class="tab-pane fade" id="month">
                             <h6>Data chart</h6>
                             <div id="columnchart" class="columnchart"></div>
                             <ul class="stats-data clearfix">
-                                <li><a href="#"><span>audio</span><strong>50%</strong></a></li>
-                                <li class="red"><a href="#"><span>video</span><strong>26%</strong></a></li>
-                                <li class="yellow"><a href="#"><span>photo</span><strong>18%</strong></a></li>
+                                <li><a href="#"><span>June</span><strong>50<i class="icon-post2 icon-date"></i></strong></a></li>
+                                <li class="red"><a href="#"><span>July</span><strong>26<i class="icon-post2 icon-date"></i></strong></a></li>
+                                <li class="yellow"><a href="#"><span>August</span><strong>18<i class="icon-post2 icon-date"></i></strong></a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
                 <!--/ Widget Stats -->
+                <div class="col-sm-3 hidden-sm hidden-md hidden-lg hidden-xl visible-xs-block">
+                    <div id="topmenu">
+                        <ul class="dropdown clearfix boxed">
+                            <li class="menu-level-0"><a href="home.html"><i class="icon-menu icon-menu3"></i><span>John Doe</span><sup class="note">3</sup></a></li>
+                            <li class="menu-level-0"><a href="login.html"><span>Logout</span></a> </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
         <!--/ row -->
